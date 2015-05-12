@@ -1,0 +1,76 @@
+
+body{
+	background-color: #334873;
+}
+
+h1 {
+	font-size: 32px;
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.75);
+	border-bottom: solid 1px rgba(255,255,255,.5);
+	margin-bottom: 0.75em;
+}
+
+form{
+	font-size: 18px;
+	color: white;
+	line-height: 125%;
+	margin-bottom: 10px;
+}
+
+input {
+	font-size: 20px;
+}
+
+#ficha .label {
+	display: block;
+	clear: left;
+	float: left;
+	width: 175px;
+	text-align: right;
+	padding: 7px 15px 0 0;
+	text-transform: uppercase;	
+	font-weight: bold;
+}
+
+#ficha .label {
+	width: 200px;	
+}
+
+.labelBlock {
+	text-transform: uppercase;
+	font-weight: bold;	
+	display: block;
+	padding-bottom: 0;
+	clear: both;
+	margin-top: 10px;
+}
+
+.infor{
+	margin-left: 215px;
+}
+
+#ficha select {
+	display: inline-block;
+	margin-top: 8px;	
+}
+
+#ficha input[type="radio"], #ficha input[type="checkbox"] {
+   display: inline-block;
+   margin-top: 10px;	
+}
+
+.correo, #submit {
+	margin-left: 215px;	
+}
+#console label {
+	float: left;
+	width: 100px;
+}
+
+#ficha label.error{
+	font-size: 0.8em;
+	color: #ffa500;
+	font-weight: bold;
+	margin-left: 5px;
+}

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jquery ejemplos</title>
+        <meta charset="utf-8"/>
+        <style>
+            body{
+
+                background-color: #AE9EAD;
+            }
+        #cabe{
+            background-color: white;
+            height:100px;
+            margin-top: -20px;
+            margin-left: -20px;
+        }
+
+        #titulo{
+
+            text-align: center;
+
+        }
+        #logo{
+            background-image: url(img/zubiri.png);
+            height: 75px;
+            width: 75px;
+            background-size: 75px 75px; 
+            float: left;
+            margin-left: 50px;
+
+        }
+          #categoria1, #categoria2, #categoria3 {
+               float: left;
+           }
+             ol{
+                display:none; 
+                width: 200px;
+                margin-left: -40px;  
+            }
+            
+            li{
+                background-color: #cccccc;
+                
+                list-style: none;
+                width: 200px;
+            }
+
+           #linea1, #linea2, #linea3 {
+                background-color: red; 
+                margin-left: 60px;
+                height: 34px;
+           }
+           #menu {
+                width: 1000px;
+           }
+           #barra{
+            float: left;
+            background-color: red;
+            height: 50px;
+            margin-left: -10px;
+            width: 100%;
+            
+           }
+         
+           img{
+
+            margin-left: 300px;
+            margin-top: 100px;
+           }
+
+           a{
+    text-decoration: none;
+}
+h1{
+    margin-left: 340px;
+}
+body{
+    background-color: #D8D1D1;
+}
+#buscarA{
+    float: left;
+    margin-left:600px;
+    margin-top: -100px;
+}
+#anadirA{
+    float: left;
+    margin-top: 50px;
+    position: absolute;
+    margin-left:600px;
+    
+}
+#eliminarA{
+    float: left;
+    
+}
+#modificarA{
+    float: left;
+    margin-top: 110px;
+    margin-left: -380px;
+}
+
+#buscarP{
+    float: left;
+    margin-left:600px;
+    margin-top: -100px;
+}
+#anadirP{
+    float: left;
+    margin-top: 50px;
+    position: absolute;
+    margin-left:600px;
+    
+}
+#eliminarP{
+    float: left;
+    
+}
+#modificarP{
+    float: left;
+    margin-top: 110px;
+    margin-left: -380px;
+}
+
+#buscarS{
+    float: left;
+    margin-left:600px;
+    margin-top: -100px;
+}
+#anadirS{
+    float: left;
+    margin-top: 50px;
+    position: absolute;
+    margin-left:600px;
+    
+}
+#eliminarS{
+    float: left;
+    
+}
+#modificarS{
+    float: left;
+    margin-top: 110px;
+    margin-left: -440px;
+}
+
+#anaA{
+
+    float: left;
+    margin-top: 100px;
+    margin-left: 160px;
+}
+        </style>
+        <script src="jquery-1.11.2.js"></script>
+        <script type="text/javascript">
+          
+         $(document).ready(
+               function(){
+                      
+                $("#linea1").click(function() {
+                       
+                      $("#Asignatura").fadeOut(0);
+                      $("#profe").fadeOut(0);                         
+                      $("#alum").fadeIn(1500);
+
+
+                });
+                  $("#linea2").click(function() {
+                       
+                      $("#Asignatura").fadeOut(0);
+                      $("#alum").fadeOut(0);                         
+                      $("#profe").fadeIn(1500);
+
+
+                });
+                    $("#linea3").click(function() {
+                       
+                      $("#alum").fadeOut(0);
+                      $("#profe").fadeOut(0);                         
+                      $("#Asignatura").fadeIn(1500);
+
+
+                });
+
+                    $("#addA").click(function() {
+                       
+                                             
+                      $("#anaA").fadeIn(1500);
+
+
+                });
+
+               }
+           );
+
+        </script>
+    </head>
+    <body>
+       
+       <div id="cabe">
+            <div id="logo"></div>
+            <div id="titulo"><h1>Matriculaciones</h1></div>
+
+       </div><!-- cabe-->
+       <div id="barra">
+
+        <div id="menu">
+            <ul>
+                <div id="categoria1">
+                    <li id="linea1">Alumnos</li>
+                   
+                </div>
+                <div id="categoria2">          
+                    <li id="linea2">Profesores</li>
+                      
+                </div>
+                <div id="categoria3">                 
+                    <li id="linea3">Asignaturas</li>
+                    
+                </div>     
+            </ul>
+        </div>
+
+
+
+       </div><!-- barra-->
+    
+            <img hidden id="imag" src="" width="500px" heitgh="500px"/>
+            <div id="contenedor">
+
+                    <div id="alum" >
+
+                        <h3>Mostrar los alumnos del centro</h3>
+        <input type="submit" value="ListarA">
+        <br>
+        <br>
+        <div id="buscarA">
+        <form action="#" method="POST">
+            <h3>Introduze el DNI del alumno para buscarlo</h3>
+            <input type="text">
+            <input type="submit" value="BuscarA">
+            <br>
+            <br>
+        </form>
+        </div>
+        <div id="anadirA">
+<h3>Click en el boton para añadir un nuevo alumno</h3>
+        <a href="#"><input type="submit" value="Add" id="addA"></a>
+        </div>
+        
+        <br>
+        <br>
+
+        <div id="eliminarA">
+            <form action="#" method="POST">
+            <h3>Introduzca el DNI de un alumno para eliminarlo</h3>
+            <input type="text">
+            <button>Borrar</button>
+        </form>
+        </div>
+
+        <div id="modificarA">
+            <form action="#" method="POST">
+            <h3>Introduzca el DNI de algun alumno para modificarlo</h3>
+            <input type="text">
+            <button>Modificar</button>
+        </form>
+        </div>
+            <div id="anaA" hidden>
+                <h4>Añade Alumno</h4>
+
+    
+        <form action="#" method="POST">
+            <table>
+                <tr><td>DNI:</td><td><input type="text" name="dniA"></td></tr>
+                <tr><td>Nombre:</td><td><input type="text" name="nombreA"></td></tr>
+                <tr><td>Apellido:</td><td><input type="text" name="apellidoA"></td></tr>
+                <tr><td>Año de Inscripcion:</td><td><input type="text" name="anoA"></td></tr>
+                <tr><td>Ciclo:</td><td><input type="text" name="cicloA"></td></tr>
+                <tr><td><input type="submit" value="Submit"></td></tr>
+            </table>
+        </form>
+
+
+</div>
+
+                    </div><!--alum-->
+
+
+
+
+
+
+                    <div id="profe" hidden>
+
+
+
+                        <h3>Mostrar los profesores del centro</h3>
+        <input type="submit" value="ListarP">
+        <br>
+        <br>
+        <div id="buscarP">
+        <form action="#" method="POST">
+            <h3>Introduze el DNI del profesor para buscarlo</h3>
+            <input type="text">
+            <input type="submit" value="BuscarP">
+            <br>
+            <br>
+        </form>
+        </div>
+        <div id="anadirP">
+<h3>Click en el boton para añadir un nuevo profesor</h3>
+        <a href="añadirP.html"><input type="submit" value="Add"></a>
+        </div>
+        
+        <br>
+        <br>
+
+        <div id="eliminarP">
+            <form action="#" method="POST">
+            <h3>Introduzca el DNI de un profesor para eliminarlo</h3>
+            <input type="text">
+            <button>Borrar</button>
+        </form>
+        </div>
+
+        <div id="modificarP">
+            <form action="#" method="POST">
+            <h3>Introduzca el DNI de algun profesor para modificarlo</h3>
+            <input type="text">
+            <button>Modificar</button>
+        </form>
+        </div>
+
+
+
+
+                    </div><!--Asignatura-->
+
+                        <div id="Asignatura" hidden>
+
+
+
+                        <h3>Mostrar las Asignatura del centro</h3>
+        <input type="submit" value="ListarS">
+        <br>
+        <br>
+        <div id="buscarS">
+        <form action="#" method="POST">
+            <h3>Introduce el nombre de la Asignatura para buscarla</h3>
+            <input type="text">
+            <input type="submit" value="Buscar">
+            <br>
+            <br>
+        </form>
+        </div>
+        <div id="anadirS">
+<h3>Click en el boton para añadir una nueva Asignatura</h3>
+        <a href="añadirS.html"><input type="submit" value="Add"></a>
+        </div>
+        
+        <br>
+        <br>
+
+        <div id="eliminarS">
+            <form action="#" method="POST">
+            <h3>Introduzca el nombre de la Asignatura para eliminarla</h3>
+            <input type="text">
+            <button>Borrar</button>
+        </form>
+        </div>
+
+        <div id="modificarS">
+            <form action="#" method="POST">
+            <h3>Introduzca el nombre de alguna Asignatura para modificarla</h3>
+            <input type="text">
+            <button>Modificar</button>
+        </form>
+        </div>
+
+
+
+
+                    </div><!--Asignatura-->
+
+
+
+            </div><!-- contenedor-->
+            
+    </body>
+</html>
