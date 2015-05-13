@@ -38,6 +38,13 @@ public class anadirA extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String dni = request.getParameter("dniA");
+		String nombre = request.getParameter("nombreA");
+		String apellido = request.getParameter("apellidoA");
+		int año = Integer.parseInt(request.getParameter("anoA"));
+		String ciclo = request.getParameter("apellidoA");
+		
 		try{
 			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();
@@ -55,20 +62,17 @@ public class anadirA extends HttpServlet {
 					+"añoInscripcion int(4),"
 					+"ciclo varchar (15));");
 			*/
-			sentencia.executeUpdate("INSERT INTO alumno (dni, nombre, apellido, añoInscripcion, ciclo) VALUES ('"
+		/*	sentencia.executeUpdate("INSERT INTO alumno (dni, nombre, apellido, añoInscripcion, ciclo) VALUES ('"
 					+request.getParameter("dniA")+"','"
 					+request.getParameter("nombreA")+"',"
-					+request.getParameter("apellidoA")+"',"
-					+Integer.parseInt(request.getParameter("anoA"))+"',"
-					+request.getParameter("cicloA")+")");
-			
-			/*sentencia.executeUpdate("INSERT INTO alumno (dni, nombre, apellido, añoInscripcion, ciclo) VALUES ('"
-					+request.getParameter("dniA")+"','"
-					+request.getParameter("nombreA")+"','"
 					+request.getParameter("apellidoA")+"','"
 					+Integer.parseInt(request.getParameter("anoA"))+"','"
-					+request.getParameter("cicloA")+"')");
-			*/
+					+request.getParameter("cicloA")+")");
+		*/	
+			
+			sentencia.executeUpdate("INSERT INTO alumno (dni, nombre, apellido, añoInscripcion, ciclo)"
+					+ "VALUES ('"+dni+"','"+nombre+"','"+apellido+"','"+año+"','"+ciclo+"')");
+					
 			
 			ResultSet alumno = sentencia.executeQuery("SELECT * FROM alumno WHERE dni = '"+request.getParameter("dniA")+"';"); 
 			alumno.next();
