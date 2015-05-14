@@ -19,4 +19,44 @@
     <servlet-name>anadirA</servlet-name>
     <url-pattern>/anadirA</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>verA</display-name>
+    <servlet-name>verA</servlet-name>
+    <servlet-class>com.zubiri.matriculas.verA</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>verA</servlet-name>
+    <url-pattern>/verA</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>buscarA</display-name>
+    <servlet-name>buscarA</servlet-name>
+    <servlet-class>com.zubiri.matriculas.buscarA</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>buscarA</servlet-name>
+    <url-pattern>/buscarA</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>eliminarA</display-name>
+    <servlet-name>eliminarA</servlet-name>
+    <servlet-class>com.zubiri.matriculas.eliminarA</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>eliminarA</servlet-name>
+    <url-pattern>/eliminarA</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>modificarA</display-name>
+    <servlet-name>modificarA</servlet-name>
+    <servlet-class>com.zubiri.matriculas.modificarA</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>modificarA</servlet-name>
+    <url-pattern>/modificarA</url-pattern>
+  </servlet-mapping>
 </web-app>

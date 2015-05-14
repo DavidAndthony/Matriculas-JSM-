@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>jquery ejemplos</title>
+        <title>matriculaciones</title>
         <meta charset="utf-8"/>
         <style>
             body{
@@ -9,7 +9,7 @@
                 background-color: #AE9EAD;
             }
         #cabe{
-            background-color: white;
+            background-color: #D8D1D1;
             height:100px;
             margin-top: -20px;
             margin-left: -20px;
@@ -156,8 +156,7 @@ body{
          $(document).ready(
                function(){
                       
-                $("#linea1").click(function() {
-                       
+                $("#linea1").click(function() {    
                       $("#Asignatura").fadeOut(0);
                       $("#profe").fadeOut(0);                         
                       $("#alum").fadeIn(1500);
@@ -183,8 +182,11 @@ body{
                     $("#addA").click(function() {                      
                       $("#anaA").fadeIn(1500);
 
-
                 });
+                    $("#bModificar").click(function() {                      
+                        $("#fModificar").fadeIn(1500);
+
+                  });
 
                }
            );
@@ -227,13 +229,15 @@ body{
                     <div id="alum" >
 
                         <h3>Mostrar los alumnos del centro</h3>
-        <input type="submit" value="ListarA">
+         <form action="verA" method="POST" >
+        <input type="submit" value="Listar alumnos">
         <br>
+         </form>
         <br>
         <div id="buscarA">
-        <form action="#" method="POST">
+        <form action="buscarA" method="POST">
             <h3>Introduze el DNI del alumno para buscarlo</h3>
-            <input type="text">
+            <input type="text" name="buscarDNIa">
             <input type="submit" value="BuscarA">
             <br>
             <br>
@@ -248,19 +252,33 @@ body{
         <br>
 
         <div id="eliminarA">
-            <form action="#" method="POST">
+            <form action="eliminarA" method="POST">
             <h3>Introduzca el DNI de un alumno para eliminarlo</h3>
-            <input type="text">
+            <input type="text" name="">
             <button>Borrar</button>
         </form>
         </div>
 
         <div id="modificarA">
-            <form action="#" method="POST">
-            <h3>Introduzca el DNI de algun alumno para modificarlo</h3>
-            <input type="text">
-            <button>Modificar</button>
-        </form>
+              <!-- <form action="#" method="POST">
+          <h3>Introduzca el DNI de algun alumno para modificarlo</h3>-->
+            <h3>modificar alumnos</h3>
+            <!--  <input type="text">
+            <button id="bModificar">Modificar</button>
+        	</form>-->
+         
+         <input type="button" id="bModificar" value="modificar"></input>
+        	<form action="modificarA" method="POST" id="fModificar">
+        	<table>
+                <tr><td>DNI del alumno a modificar:</td><td><input type="text" name="mdniA"></td></tr>
+                <tr><td>Nombre:</td><td><input type="text" name="mnombreA"></td></tr>
+                <tr><td>Apellido:</td><td><input type="text" name="mapellidoA"></td></tr>
+                <tr><td>Año de Inscripcion:</td><td><input type="text" name="manoA"></td></tr>
+                <tr><td>Ciclo:</td><td><input type="text" name="mcicloA"></td></tr>
+                <tr><td><input type="submit" value="Submit"></td></tr>
+            </table>
+        	
+        	</form>
         </div>
             <div id="anaA" hidden>
                 <h4>Añade Alumno</h4>

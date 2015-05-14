@@ -12,17 +12,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.zubiri.matriculas.*;
 /**
- * Servlet implementation class anadirA
+ * Servlet implementation class modificarA
  */
-public class anadirA extends HttpServlet {
+public class modificarA extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public anadirA() {
+    public modificarA() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,19 +30,18 @@ public class anadirA extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String dni = request.getParameter("dniA");
-		String nombre = request.getParameter("nombreA");
-		String apellido = request.getParameter("apellidoA");
-		int año = Integer.parseInt(request.getParameter("anoA"));
-		String ciclo = request.getParameter("apellidoA");
+		String dni = request.getParameter("mdniA");
+		String nombre = request.getParameter("mnombreA");
+		String apellido = request.getParameter("mapellidoA");
+		int año = Integer.parseInt(request.getParameter("manoA"));
+		String ciclo = request.getParameter("mapellidoA");
 		
 		try{
 			response.setContentType("text/html");
@@ -55,32 +53,23 @@ public class anadirA extends HttpServlet {
 			Statement sentencia = conexion.createStatement();
 			System.out.println("sentencia creada");
 			
-			/*sentencia.executeUpdate("CREATE TABLE IF NOT EXISTS alumno"
-					+ "(dni varchar (15) primary key,"
-					+"nombre varchar(15),"
-					+"apellido varchar(15),"
-					+"añoInscripcion int(4),"
-					+"ciclo varchar (15));");
-			*/
-		/*	sentencia.executeUpdate("INSERT INTO alumno (dni, nombre, apellido, añoInscripcion, ciclo) VALUES ('"
-					+request.getParameter("dniA")+"','"
-					+request.getParameter("nombreA")+"',"
-					+request.getParameter("apellidoA")+"','"
-					+Integer.parseInt(request.getParameter("anoA"))+"','"
-					+request.getParameter("cicloA")+")");
-		*/	
-			
-			sentencia.executeUpdate("INSERT INTO alumno (dni, nombre, apellido, añoInscripcion, ciclo)"
-					+ "VALUES ('"+dni+"','"+nombre+"','"+apellido+"','"+año+"','"+ciclo+"')");
+			//update alumno set nombre = "x" where dni = "a";
+			sentencia.executeUpdate("update alumno set"
 					
-			
+					+ "nombre = '"+nombre+"'"+","
+					+"apellido= '"+apellido+"'"+","
+					+"añoInscripcion= '"+año+"'"+","
+					+"ciclo = '"+ciclo+"'"
+					+ "where dni = '"+dni+"'"+";");
+					
+					
 			ResultSet alumno = sentencia.executeQuery("SELECT * FROM alumno WHERE dni = '"+request.getParameter("dniA")+"';"); 
 			alumno.next();
 			out.println("<html>");
 			out.println("<head><title>Respuesta</title>");
 			out.println("<body>");
 			out.println("<h1>alumnos</h1>");
-			out.println("<p>el alumno con el dni : " + alumno.getString("dni")  + " ha sido añadido a la base de datos</p>");
+			out.println("<p>el alumno con el dni : " + alumno.getString("dni")  + " ha sido modificado</p>");
 			out.println("</body></html>");
 
 				conexion.close();		
