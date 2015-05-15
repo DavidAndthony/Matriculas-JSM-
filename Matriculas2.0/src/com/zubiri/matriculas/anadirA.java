@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.zubiri.matriculas.*;
+
+import com.zubiri.matriculas.Alumno;
+
 /**
  * Servlet implementation class anadirA
  */
@@ -39,12 +41,30 @@ public class anadirA extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		
+		Alumno alumnojar = new Alumno();
+				
+		alumnojar.setDni(request.getParameter("dniA"));
+		alumnojar.setNombre(request.getParameter("nombreA"));
+		alumnojar.setApellido(request.getParameter("apellidoA"));
+		alumnojar.setAñoInscripcion(Integer.parseInt(request.getParameter("anoA")));
+		alumnojar.setCiclo(request.getParameter("cicloA"));
+				//request.getParameter("dniA"),
+				//request.getParameter("nombreA"),
+				//request.getParameter("apellidoA"),
+				//Integer.parseInt(request.getParameter("anoA")),
+				//request.getParameter("cicloA")
+				
+		
+		
+		/*funcuiona
 		String dni = request.getParameter("dniA");
 		String nombre = request.getParameter("nombreA");
 		String apellido = request.getParameter("apellidoA");
 		int año = Integer.parseInt(request.getParameter("anoA"));
 		String ciclo = request.getParameter("apellidoA");
-		
+		*/
 		try{
 			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();
@@ -69,9 +89,12 @@ public class anadirA extends HttpServlet {
 					+Integer.parseInt(request.getParameter("anoA"))+"','"
 					+request.getParameter("cicloA")+")");
 		*/	
+			//funciona
+			//sentencia.executeUpdate("INSERT INTO alumno (dni, nombre, apellido, añoInscripcion, ciclo)"
+			//		+ "VALUES ('"+dni+"','"+nombre+"','"+apellido+"','"+año+"','"+ciclo+"')");
 			
 			sentencia.executeUpdate("INSERT INTO alumno (dni, nombre, apellido, añoInscripcion, ciclo)"
-					+ "VALUES ('"+dni+"','"+nombre+"','"+apellido+"','"+año+"','"+ciclo+"')");
+						+ "VALUES ('"+alumnojar.getDni()+"','"+alumnojar.getNombre()+"','"+alumnojar.getApellido()+"','"+alumnojar.getAñoInscripcion()+"','"+alumnojar.getCiclo()+"')");
 					
 			
 			ResultSet alumno = sentencia.executeQuery("SELECT * FROM alumno WHERE dni = '"+request.getParameter("dniA")+"';"); 
@@ -80,7 +103,9 @@ public class anadirA extends HttpServlet {
 			out.println("<head><title>Respuesta</title>");
 			out.println("<body>");
 			out.println("<h1>alumnos</h1>");
-			out.println("<p>el alumno con el dni : " + alumno.getString("dni")  + " ha sido añadido a la base de datos</p>");
+			//out.println("<p>el alumno con el dni : " + alumno.getString("dni")  + " ha sido añadido a la base de datos</p>");
+			out.println("<p>el alumno con el dni : " + alumnojar.formattedAlumno()
+					+ " ha sido añadido a la base de datos</p>");
 			out.println("</body></html>");
 
 				conexion.close();		

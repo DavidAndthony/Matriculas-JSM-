@@ -50,7 +50,7 @@ public class modificarA extends HttpServlet {
 		String ciclo = request.getParameter("mapellidoA");
 		
 		try{
-		/*	
+		/*
 			Persona alumno = new Alumno(
 					request.getParameter("mdniA"),
 					request.getParameter("mnombreA"),
