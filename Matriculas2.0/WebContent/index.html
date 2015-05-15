@@ -149,6 +149,12 @@ body{
     margin-top: 100px;
     margin-left: 160px;
 }
+#anaP{
+
+    float: left;
+    margin-top: 100px;
+    margin-left: 160px;
+}
         </style>
         <script src="jquery-1.11.2.js"></script>
         <script type="text/javascript">
@@ -183,8 +189,15 @@ body{
                       $("#anaA").fadeIn(1500);
 
                 });
+                    $("#addP").click(function() {                      
+                    	$("#anaP").fadeIn(1500);
+                  });
                     $("#bModificar").click(function() {                      
                         $("#fModificar").fadeIn(1500);
+
+                  });
+                    $("#bModificarP").click(function() {                      
+                        $("#fModificarP").fadeIn(1500);
 
                   });
 
@@ -254,7 +267,7 @@ body{
         <div id="eliminarA">
             <form action="eliminarA" method="POST">
             <h3>Introduzca el DNI de un alumno para eliminarlo</h3>
-            <input type="text" name="">
+            <input type="text" name="eliminarA">
             <button>Borrar</button>
         </form>
         </div>
@@ -263,12 +276,9 @@ body{
               <!-- <form action="#" method="POST">
           <h3>Introduzca el DNI de algun alumno para modificarlo</h3>-->
             <h3>modificar alumnos</h3>
-            <!--  <input type="text">
-            <button id="bModificar">Modificar</button>
-        	</form>-->
-         
+          
          <input type="button" id="bModificar" value="modificar"></input>
-        	<form action="modificarA" method="POST" id="fModificar">
+        	<form hidden action="modificarA" method="POST" id="fModificar">
         	<table>
                 <tr><td>DNI del alumno a modificar:</td><td><input type="text" name="mdniA"></td></tr>
                 <tr><td>Nombre:</td><td><input type="text" name="mnombreA"></td></tr>
@@ -310,46 +320,77 @@ body{
 
 
                         <h3>Mostrar los profesores del centro</h3>
-        <input type="submit" value="ListarP">
+        <form action="verP" method="POST" >
+        <input type="submit" value="Listar Profesores">
+        <br>
+         </form>
         <br>
         <br>
         <div id="buscarP">
-        <form action="#" method="POST">
+        <form action="buscarP" method="POST">
             <h3>Introduze el DNI del profesor para buscarlo</h3>
-            <input type="text">
-            <input type="submit" value="BuscarP">
+            <input type="text" name="buscarDNIP">
+            <input type="submit" value="Buscar Profesores" >
             <br>
             <br>
         </form>
         </div>
         <div id="anadirP">
 <h3>Click en el boton para añadir un nuevo profesor</h3>
-        <a href="añadirP.html"><input type="submit" value="Add"></a>
+        <a href="#"><input type="submit" value="Add" id="addP"></a>
         </div>
         
         <br>
         <br>
 
         <div id="eliminarP">
-            <form action="#" method="POST">
+            <form action="eliminarP" method="POST">
             <h3>Introduzca el DNI de un profesor para eliminarlo</h3>
-            <input type="text">
+            <input type="text" name="eliminarP">
             <button>Borrar</button>
         </form>
         </div>
 
-        <div id="modificarP">
-            <form action="#" method="POST">
-            <h3>Introduzca el DNI de algun profesor para modificarlo</h3>
-            <input type="text">
-            <button>Modificar</button>
-        </form>
+         <div id="modificarP">
+              <!-- <form action="#" method="POST">
+          <h3>Introduzca el DNI de algun alumno para modificarlo</h3>-->
+            <h3>modificar profesores</h3>
+          
+         <input type="button" id="bModificarP" value="modificar"></input>
+        	<form hidden action="modificarP" method="POST" id="fModificarP">
+        	<table>
+                <tr><td>DNI del profesor a modificar:</td><td><input type="text" name="mdniP"></td></tr>
+                <tr><td>Nombre:</td><td><input type="text" name="mnombreP"></td></tr>
+                <tr><td>Apellido:</td><td><input type="text" name="mapellidoP"></td></tr>
+                <tr><td>Titulacion:</td><td><input type="text" name="mtitulacionP"></td></tr>
+                <tr><td>Departamentp:</td><td><input type="text" name="mdepartamentoP"></td></tr>
+                <tr><td><input type="submit" value="Submit"></td></tr>
+            </table>
+        	
+        	</form>
         </div>
+				<div id="anaP" hidden >
+                <h4>Añade profesor</h4>
+
+    
+        <form action="anadirP" method="POST">
+            <table>
+                <tr><td>DNI:</td><td><input type="text" name="dniP"></td></tr>
+                <tr><td>Nombre:</td><td><input type="text" name="nombreP"></td></tr>
+                <tr><td>Apellido:</td><td><input type="text" name="apellidoP"></td></tr>
+                <tr><td>titulacion:</td><td><input type="text" name="titulacionP"></td></tr>
+                <tr><td>departamentp:</td><td><input type="text" name="departamentoP"></td></tr>
+                <tr><td><input type="submit" value="Submit"></td></tr>
+            </table>
+        </form>
 
 
+</div>
+				
+			
 
 
-                    </div><!--Asignatura-->
+                    </div><!--profe-->
 
                         <div id="Asignatura" hidden>
 

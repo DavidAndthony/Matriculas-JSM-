@@ -12,16 +12,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+//import com.zubiri.matriculas.*;
 /**
- * Servlet implementation class eliminarA
+ * Servlet implementation class anadirA
  */
-public class eliminarA extends HttpServlet {
+public class anadirP extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public eliminarA() {
+    public anadirP() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,14 +31,19 @@ public class eliminarA extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String dni = request.getParameter("eliminarA");
+		
+		String dni = request.getParameter("dniP");
+		String nombre = request.getParameter("nombreP");
+		String apellido = request.getParameter("apellidoP");
+		String titulacion = request.getParameter("titulacionP");
+		String departamento = request.getParameter("departamentoP");
 		
 		try{
 			response.setContentType("text/html");
@@ -49,18 +55,32 @@ public class eliminarA extends HttpServlet {
 			Statement sentencia = conexion.createStatement();
 			System.out.println("sentencia creada");
 			
-		
-			//delete from departamentos where dnombre = "VENTAS";
-			//ResultSet alumno = sentencia.executeQuery("delete FROM alumno where dni ='"+dni+"';"); 
-			//alumno.next();
-			String borrar ="delete FROM alumno where dni ='"+dni+"';";
-			sentencia.execute(borrar);
+			/*sentencia.executeUpdate("CREATE TABLE IF NOT EXISTS alumno"
+					+ "(dni varchar (15) primary key,"
+					+"nombre varchar(15),"
+					+"apellido varchar(15),"
+					+"añoInscripcion int(4),"
+					+"ciclo varchar (15));");
+			*/
+		/*	sentencia.executeUpdate("INSERT INTO alumno (dni, nombre, apellido, añoInscripcion, ciclo) VALUES ('"
+					+request.getParameter("dniA")+"','"
+					+request.getParameter("nombreA")+"',"
+					+request.getParameter("apellidoA")+"','"
+					+Integer.parseInt(request.getParameter("anoA"))+"','"
+					+request.getParameter("cicloA")+")");
+		*/	
 			
+			sentencia.executeUpdate("INSERT INTO profesor (dni, nombre, apellido, titulacion, departamento)"
+					+ "VALUES ('"+dni+"','"+nombre+"','"+apellido+"','"+titulacion+"','"+departamento+"')");
+					
+			
+			ResultSet profesor = sentencia.executeQuery("SELECT * FROM profesor WHERE dni = '"+request.getParameter("dniP")+"';"); 
+			profesor.next();
 			out.println("<html>");
 			out.println("<head><title>Respuesta</title>");
 			out.println("<body>");
-			out.println("<h1>alumnos</h1>");
-			out.println("<p>el alumno con el dni: "+request.getParameter("eliminarA")+ " ha sido eliminado de la base de datos</p>");
+			out.println("<h1>profesors</h1>");
+			out.println("<p>el profesor con el dni : " + profesor.getString("dni")  + " ha sido añadido a la base de datos</p>");
 			out.println("</body></html>");
 
 				conexion.close();		

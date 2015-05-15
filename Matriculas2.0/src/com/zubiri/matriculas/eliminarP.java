@@ -15,13 +15,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class eliminarA
  */
-public class eliminarA extends HttpServlet {
+public class eliminarP extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public eliminarA() {
+    public eliminarP() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,7 +37,7 @@ public class eliminarA extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String dni = request.getParameter("eliminarA");
+		String dni = request.getParameter("eliminarP");
 		
 		try{
 			response.setContentType("text/html");
@@ -51,16 +51,16 @@ public class eliminarA extends HttpServlet {
 			
 		
 			//delete from departamentos where dnombre = "VENTAS";
-			//ResultSet alumno = sentencia.executeQuery("delete FROM alumno where dni ='"+dni+"';"); 
+			//ResultSet profesor = sentencia.executeQuery("delete FROM profesor where dni ='"+dni+"';"); 
 			//alumno.next();
-			String borrar ="delete FROM alumno where dni ='"+dni+"';";
+			String borrar ="delete FROM profesor where dni ='"+dni+"';";
 			sentencia.execute(borrar);
 			
 			out.println("<html>");
 			out.println("<head><title>Respuesta</title>");
 			out.println("<body>");
-			out.println("<h1>alumnos</h1>");
-			out.println("<p>el alumno con el dni: "+request.getParameter("eliminarA")+ " ha sido eliminado de la base de datos</p>");
+			out.println("<h1>profesor</h1>");
+			out.println("<p>el profesor con el dni: "+request.getParameter("eliminarP")+ " ha sido eliminado de la base de datos</p>");
 			out.println("</body></html>");
 
 				conexion.close();		

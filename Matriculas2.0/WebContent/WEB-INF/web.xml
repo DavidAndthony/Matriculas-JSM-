@@ -59,4 +59,54 @@
     <servlet-name>modificarA</servlet-name>
     <url-pattern>/modificarA</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>anadirP</display-name>
+    <servlet-name>anadirP</servlet-name>
+    <servlet-class>com.zubiri.matriculas.anadirP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>anadirP</servlet-name>
+    <url-pattern>/anadirP</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>verP</display-name>
+    <servlet-name>verP</servlet-name>
+    <servlet-class>com.zubiri.matriculas.verP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>verP</servlet-name>
+    <url-pattern>/verP</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>eliminarP</display-name>
+    <servlet-name>eliminarP</servlet-name>
+    <servlet-class>com.zubiri.matriculas.eliminarP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>eliminarP</servlet-name>
+    <url-pattern>/eliminarP</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>buscarP</display-name>
+    <servlet-name>buscarP</servlet-name>
+    <servlet-class>com.zubiri.matriculas.buscarP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>buscarP</servlet-name>
+    <url-pattern>/buscarP</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>modificarP</display-name>
+    <servlet-name>modificarP</servlet-name>
+    <servlet-class>com.zubiri.matriculas.modificarP</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>modificarP</servlet-name>
+    <url-pattern>/modificarP</url-pattern>
+  </servlet-mapping>
 </web-app>
