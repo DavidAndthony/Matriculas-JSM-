@@ -109,4 +109,24 @@
     <servlet-name>modificarP</servlet-name>
     <url-pattern>/modificarP</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>anadirS</display-name>
+    <servlet-name>anadirS</servlet-name>
+    <servlet-class>com.zubiri.matriculas.anadirS</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>anadirS</servlet-name>
+    <url-pattern>/anadirS</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>verS</display-name>
+    <servlet-name>verS</servlet-name>
+    <servlet-class>com.zubiri.matriculas.verS</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>verS</servlet-name>
+    <url-pattern>/verS</url-pattern>
+  </servlet-mapping>
 </web-app>
